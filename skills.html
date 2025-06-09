@@ -1,0 +1,103 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VA Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="skills.css">
+      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  </head>
+  <body oncontextmenu="return false;">
+    <!-- PRELOADER -->
+    <div id="preloader">Loading...</div>
+    <div class="background-container">
+      <img src="/VAPORTFOLIO/VA IMAGES/flowers/10.webp" class="overlay-image" alt="Overlay Image">
+    </div>
+    <div class="top-header">
+      <h2 class="subtitle" onclick="window.location.href='index.html'">Home</h2>
+      <h2 class="subtitle" onclick="window.location.href='about-me.html'">About Me</h2>
+      <h2 class="subtitle" onclick="window.location.href='skills.html'">Skills</h2>
+      <h2 class="subtitle" onclick="window.location.href='blog.html'">Blog</h2>
+      <h2 class="subtitle" onclick="window.location.href='get-in-touch.html'">Get in Touch</h2>
+    </div>
+    <div class="main-header">
+      <h1 class="title">Sample Projects:</h1>
+      <div class="project-body">
+        <div class="project-left">
+            <div class="project-details"> WEBSITE CLONE SAMPLE
+                <a class="project-name" href="../WIKIPEDIA/wikipedia.html" target="_blank">
+                    1. Wikipedia Sample
+                </a>
+                <a class="project-name" href="../PRACTICE TEST/googlepagesample.html" target="_blank">
+                    2. Google Sample
+                </a>
+                <a class="project-name" href="../JAVASCRIPT EXERCISES/LOGINPAGE/loginpage.html" target="_blank">
+                    3. Log In Page Sample
+                </a>
+                <a class="project-name" href="../BOOTSTRAP/bootstrap clone/bootstrapcheckoutform.html" target="_blank">
+                    4. BootStrap Clone Sample
+                </a>
+                <a class="project-name" href="../../EXERCISES-AMAZON-14/javascript-amazon-project-main/amazon.html" target="_blank">
+                    5. Amazon Clone Sample
+                </a>
+            </div>
+        </div>
+
+        <div class="project-middle">
+            <div class="project-details">CREATED WEBSITE SAMPLES
+                <a class="project-name" href="../REALESTATEPORTFOLIO/realtorwebsite.html" target="_blank">
+                    1. Real Estate Property Website
+                </a>
+                <a class="project-name" href="../PORTFOLIO/portfolio.html" target="_blank">
+                    2. Web Developer Portfolio
+                </a>
+            </div>           
+        </div>
+
+        <div class="project-right">
+            <div class="project-details">SAMPLE FORMS
+                <a class="project-name" href="../FORMS/exampleadvancedform.html" target="_blank">
+                    1. Contact Form
+                </a>
+                <a class="project-name" href="../FORMS/jobapplicationform.html" target="_blank">
+                    2. Job Application Form
+                </a>
+                <a class="project-name" href="../FORMS/event-registration-form.html" target="_blank">
+                    3. Event Registration Form
+                </a>
+                <a class="project-name" href="../FORMS/booking-appointment-form.html" target="_blank">
+                    4. Booking Appointment Form
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Disable image dragging
+        document.querySelectorAll('img, svg').forEach(el => {
+            el.setAttribute('draggable', 'false');
+        });
+        // Block dev tools and view-source shortcuts
+        document.addEventListener('keydown', function (e) {
+            if (
+                e.ctrlKey && (e.key === 'u' || e.key === 'U') || // Ctrl+U
+                e.key === 'F12' ||                               // F12
+                (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase()))
+            ) {
+                e.preventDefault();
+            }
+        });
+        // Preloader fade out and reveal main content on page load
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+            const mainContent = document.querySelector(".main-content");
+
+            preloader.classList.add("fade-out");
+
+            setTimeout(() => {
+                preloader.style.display = "none";
+                mainContent.style.visibility = "visible";
+            }, 500);
+        });
+    </script>  
+  </body>
+</html>
