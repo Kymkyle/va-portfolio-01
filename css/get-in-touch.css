@@ -1,0 +1,774 @@
+/* Preloader styles */
+#preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111; /* dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    user-select: none;
+}
+#preloader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+/* Protection: Disable text selection & image dragging */
+body, html, .background-image, .main-content, .why-work-with-me-content, img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+html, body {
+  height: 100%;
+}
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* Background Image Setup */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.overlay-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) grayscale(20%);
+  animation: zoomPan 30s ease-in-out infinite;
+}
+
+@keyframes zoomPan {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.05) translate(-10px, -10px); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+/* Top Navigation Header */
+.top-header {
+  display: flex;
+  justify-content: center;
+  font-family: Tahoma;
+  gap: 80px;
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  z-index: 100;
+  font-size: 18px;
+  color: rgb(165, 146, 38);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  padding: 12px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.top-header .subtitle {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.top-header .subtitle:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transform: scale(1.05);
+}
+.main-body {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Titles */
+.main-header .title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: rgba(8, 34, 5, 0.822);
+  text-shadow:
+    1px 1px 5px rgba(0, 0, 0, 0.6),
+    -1px -1px 1px rgba(255, 255, 255, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+} 
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #aaa; }
+  to { text-shadow: 0 0 20px #fff; }
+}
+.container {
+  flex: 2; /* takes 1 part of the available space */
+  max-width: 800px;
+  width: 100%;
+  background:rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    0 10px 10px rgba(0, 0, 0, 0.1),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: rotateX(1deg) rotateY(-1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  margin-top: 150px;
+  margin-left: 50px;
+  margin-bottom: 200px;
+  will-change: transform; /* helps performance */
+  /* Remove this static transform */
+  /* transform: rotateX(1deg) rotateY(-1deg); */
+  animation: glow 2s ease-in-out infinite alternate; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+.container:hover {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 10px 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.right-container {
+  flex: 1; /* takes 1 part of the available space */
+  margin-top: 150px;
+  margin-left: 80px;
+  margin-right: 50px;
+  padding: 20px;
+  border-radius: 20px;
+    /* Background Blur */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(7px); /* for Safari */
+  animation: glow 2s ease-in-out infinite alternate; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.body-right-side {
+  box-shadow: 0 4px 8px rgba(224, 196, 196, 0.486);
+  padding: 25px;
+  border: none;
+  border-radius: 20px;
+    /* Background Blur */
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  animation: glow 2s ease-in-out infinite alternate; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.body-right-side:hover {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 10px 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.tag-line {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
+  color: rgb(165, 146, 38);
+  text-shadow:
+    1px 1px 5px rgba(0, 0, 0, 0.6),
+    -1px -1px 1px rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;  
+  box-shadow: 0 4px 8px rgba(224, 196, 196, 0.486);
+  padding: 25px;
+  border: none;
+  border-radius: 20px;
+    /* Background Blur */
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  animation: glow 2s ease-in-out infinite alternate; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.tag-line:hover {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 10px 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+.text {
+  display: flex;
+  font-family: Tahoma;
+  font-size: 25px;
+  color: white;
+  text-shadow:
+    1px 1px 5px rgba(0, 0, 0, 0.6),
+    -1px -1px 1px rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+  justify-content:center; 
+}
+.contact-details-text1 {
+  display: flex;
+  align-items: center;  /* vertically center icon and text */
+  gap: 10px;            /* space between icon and text */
+  color: rgb(165, 146, 38);
+  font-family: Tahoma, sans-serif;
+  margin-top: 15px;
+  justify-content:center; 
+}
+.contact-details-text1 svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  fill: rgb(165, 146, 38);
+}
+
+.contact-details-text2 a {
+  color: rgb(165, 146, 38);
+  text-decoration: none;
+  font-weight: 600;
+  justify-content:center; 
+}
+
+.contact-details-text2 a:hover {
+  text-decoration: underline;
+  color: rgba(8, 34, 5, 0.9);
+}
+.contact-me {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+  background-color: white;
+  color: rgba(8, 34, 5, 0.822);
+  text-shadow:
+    1px 1px 5px rgba(0, 0, 0, 0.6),
+    -1px -1px 1px rgba(255, 255, 255, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+label {
+  color: rgb(165, 146, 38);
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.radio-group {
+  margin-top: 10px;
+}
+
+.radio-group label {
+  font-weight: normal;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+button {
+  font-family: Tahoma;
+  margin-top: 20px;
+  background-color: rgba(8, 34, 5, 0.822);
+  color: rgb(165, 146, 38);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(165, 146, 38);
+  color: rgba(8, 34, 5, 0.822);
+}
+
+/* Modal Popup Styling */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  display: none;
+}
+
+.popup-content {
+  margin-top: 50px;
+  background: url('assets/flower.jpg') no-repeat center center / cover;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    0 10px 10px rgba(0, 0, 0, 0.1),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: rotateX(1deg) rotateY(-1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 50px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.popup h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  color: rgba(8, 34, 5, 0.822);
+  text-shadow:
+    1px 1px 5px rgba(0, 0, 0, 0.6),
+    -1px -1px 1px rgba(255, 255, 255, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  margin-top: 10px;
+  font-size: 30px;
+  color:rgb(165, 146, 38);
+   text-shadow:
+    1px 1px 5px rgba(0, 0, 0, 0.6),
+    -1px -1px 1px rgba(255, 255, 255, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.popup button {
+  margin-top: 20px;
+  background-color:  rgba(8, 34, 5, 0.822);
+  color: rgb(165, 146, 38);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: rgb(165, 146, 38);
+  color: rgba(8, 34, 5, 0.822);
+}
+/* Blur effect when popup is active */
+#pageContent.blurred {
+  filter: blur(10px);
+  transition: filter 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* --------------------------------
+   RESPONSIVE STYLES
+---------------------------------- */
+
+/* Tablets (e.g., 11" notepad, 768px–1024px) */
+@media screen and (max-width: 1024px) {
+  .main-header {
+    margin-top: 220px;
+    padding: 40px 20px;
+  }
+
+  .main-header .title {
+    font-size: 48px;
+  }
+
+  .main-header .tagline {
+    font-size: 32px;
+  }
+  
+  .main-content {
+    width: 95%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .top-header {
+    width: 95%;
+    font-size: 16px;
+    gap: 50px;
+    padding: 10px 0;
+    top: 12px;
+  }
+  .top-header .subtitle {
+    text-align: center;
+  }
+  .container {
+    margin-top: 160px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .right-container {
+    margin-top: 160px;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .tag-line {
+    width: 350px;
+    font-size: 35px;
+  }
+  .body-right-side {
+    display: flex; /* required for justify-content and align-items to work */
+    flex-direction: column; /* stack items vertically */
+    justify-content: flex-start; /* align horizontally to the left */
+    align-items: flex-start; /* align vertically to the top */
+  }
+
+}
+/* --------------------------------
+   RESPONSIVE STYLES
+---------------------------------- */
+
+/* Tablets and Small Laptops (≤ 768px) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .main-body {
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+    margin-left: -5px;
+    margin-right: 15px;
+  }
+
+  .top-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    width: 95%;
+    padding: 8px 0;
+    top: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .tag-line {
+    width: 100%;
+    font-size: 35px;
+    font-weight: 700;
+    padding: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .label {
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+  }
+  .container {
+    width: 95%;
+    padding: 20px;
+    margin-top: 110px;
+  }
+
+  .right-container {
+    width: 95%;
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 20px;
+  }
+
+  .body-right-side {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .contact-me {
+    font-size: 38px;
+    padding: 10px;
+  }
+
+  .popup-content {
+    padding: 30px;
+  }
+
+  .popup h3 {
+    font-size: 38px;
+  }
+
+  .popup p {
+    font-size: 20px;
+  }
+  .contact-details-text2 {
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Phones - Very Small Screens (≤ 400px) */
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 12px;
+  }
+
+  .main-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-header {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    margin-left: 0;
+    padding: 8px 0;
+    top: 30px;
+    line-height: 0.3;
+    background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.2));
+    backdrop-filter: blur(3px);
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.6),
+      inset 0 0 15px rgba(255, 255, 255, 0.1),
+      0 0 25px rgba(255, 255, 255, 0.05);
+    transform: translateZ(10px) scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 2s ease-in-out;
+  }
+  .top-header .subtitle {
+    text-align: center;
+  }
+
+  .container {
+    width: 98%;
+    margin-top: 280px;
+    margin-left: 0px;
+    padding: 15px;
+  }
+
+  .right-container {
+    width: 95%;
+    padding: 15px;
+    padding-bottom: 60px;
+
+  }
+  .contact-details-text2 {
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* subtle dark shadow for contrast */
+  }
+  .text {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* subtle dark shadow for contrast */
+  }
+
+  .body-right-side {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .tag-line {
+    font-size: 25px;
+  }
+  .text {
+    font-size: 20px;
+  }
+
+  .contact-me {
+    font-size: 25px;
+    padding: 8px;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
+
+  .popup h3 {
+    font-size: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* subtle dark shadow for contrast */
+  }
+
+  .popup p {
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* subtle dark shadow for contrast */
+  }
+  .background-container {
+    position: fixed; /* or 'absolute' if you don't want it fixed during scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    padding-bottom: 60px;
+  }
+  .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+  
+}
+/* Phones - Extra Small Screens (≤ 320px) */
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 11px;
+  }
+
+    .top-header {
+    display: flex;
+    width: 86%;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    top: 20px;
+    margin-left: 0;
+    line-height: 1.1;
+  }
+
+  .top-header .subtitle {
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .container {
+    width: 98%;
+    margin-top: 300px;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .right-container {
+    width: 97%;
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+  .tag-line {
+    font-size: 25px;
+    padding: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .body-right-side {
+    padding-left: 10px;
+  }
+  .text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .contact-me {
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .popup-content {
+    padding: 15px;
+    margin-left: -15px;
+    width: 85%;
+  }
+
+  .popup h3 {
+    font-size: 26px;
+  }
+
+  .popup p {
+    font-size: 16px;
+  }
+
+  .contact-details-text2 {
+    font-size: 14px;
+  }
+
+  .background-container {
+    height: 100%;
+    padding-bottom: 60px;
+  }
+
+  .overlay-image {
+    object-position: bottom;
+    height: 100%;
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,310 @@
+/* -------------------------
+   Preloader Styles
+------------------------- */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  user-select: none;
+}
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* -------------------------
+   Protection
+------------------------- */
+body, html, .background-image, .main-content, .why-work-with-me-content, img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* -------------------------
+   Global Styles
+------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* -------------------------
+   Background Image
+------------------------- */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+.overlay-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) grayscale(20%);
+  animation: zoomPan 30s ease-in-out infinite;
+}
+
+/* -------------------------
+   Top Navigation Header
+------------------------- */
+.top-header {
+  display: flex;
+  justify-content: center;
+  font-family: Tahoma, sans-serif;
+  gap: 80px;
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  z-index: 100;
+  font-size: 18px;
+  color: rgb(165, 146, 38);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  padding: 12px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  animation: fadeInDown 1.5s ease-in-out;
+}
+.top-header .subtitle {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.top-header .subtitle:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transform: scale(1.05);
+}
+
+/* -------------------------
+   Main Header Section
+------------------------- */
+.main-header {
+  margin-top: 190px;
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  color: #b6afaf;
+  padding: 50px 40px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.2));
+  border-radius: 30px;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(3px);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 15px rgba(255, 255, 255, 0.1),
+    0 0 25px rgba(255, 255, 255, 0.05);
+  transform: translateZ(10px) scale(1.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 2s ease-in-out;
+}
+.main-header .title {
+  font-family: 'Great Vibes', cursive, sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: rgba(8, 34, 5, 0.822);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6), -1px -1px 1px rgba(255, 255, 255, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+.main-header .tagline {
+  font-family: 'Great Vibes', cursive, sans-serif;
+  font-size: 50px;
+  margin-top: 20px;
+  font-style: italic;
+  color: rgb(165, 146, 38);
+  padding: 15px;
+  max-width: 700;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 5px solid rgba(8, 34, 5, 0.822);
+  border-right: 5px solid rgba(8, 34, 5, 0.822);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* -------------------------
+   Keyframe Animations
+------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #aaa; }
+  to { text-shadow: 0 0 20px #fff; }
+}
+@keyframes zoomPan {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.05) translate(-10px, -10px); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+/* -------------------------
+   Responsive: Tablets ≤ 1024px
+------------------------- */
+@media screen and (max-width: 1024px) {
+  .main-header {
+    margin-top: 220px;
+    padding: 40px 20px;
+    margin-left: 15px;
+  }
+  .main-header .title {
+    font-size: 60px;
+  }
+  .main-header .tagline {
+    font-size: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .main-content {
+    width: 95%;
+    margin-left: 20px;
+  }
+  .top-header {
+    width: 95%;
+    font-size: 16px;
+    gap: 50px;
+    padding: 10px 0;
+    top: 12px;
+  }
+}
+
+/* -------------------------
+   Responsive: Phones ≤ 768px
+------------------------- */
+@media screen and (max-width: 768px) {
+  .top-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    font-size: 14px;
+    top: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .main-header {
+    width: 93%;
+    margin-top: 160px;
+    padding: 30px 15px;
+    border-radius: 20px;
+    margin-left: 8px;
+  }
+  .main-header .title {
+    font-size: 50px;
+  }
+  .main-header .tagline {
+    font-size: 40px;
+    padding: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .top-header .subtitle {
+    text-align: center;
+  }
+}
+
+/* -------------------------
+   Responsive: Small Phones ≤ 400px
+------------------------- */
+@media screen and (max-width: 400px) {
+  .main-content {
+    width: 90%;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  .main-header {
+    width: 90%;
+    margin-top: 270px;
+    padding: 20px 10px;
+    border-radius: 15px;
+  }
+  .main-header .title {
+    font-size: 40px;
+  }
+  .main-header .tagline {
+    font-size: 35px;
+    font-weight: 700;
+    padding: 8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .top-header {
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    padding: 8px 0;
+    top: 30px;
+    line-height: 0.3;
+    background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.2));
+    backdrop-filter: blur(3px);
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.6),
+      inset 0 0 15px rgba(255, 255, 255, 0.1),
+      0 0 25px rgba(255, 255, 255, 0.05);
+    transform: translateZ(10px) scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 2s ease-in-out;
+  }
+  .top-header .subtitle {
+    text-align: center;
+  }
+}
+
+/* -------------------------
+   Responsive: Wide Screens ≥ 1440px
+------------------------- */
+@media screen and (min-width: 1440px) {
+  .main-header {
+    max-width: 1100px;
+    padding: 60px;
+  }
+}
+
+/* -------------------------
+   Utility Classes
+------------------------- */
+.hide-mobile {
+  display: none;
+}
+@media screen and (min-width: 769px) {
+  .hide-mobile {
+    display: block;
+  }
+}
