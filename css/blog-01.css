@@ -303,6 +303,7 @@ ul {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    color: rgb(255, 235, 150);
     font-size: 12px;
     margin-left: 2px;
     padding: 8px 0;
@@ -341,7 +342,10 @@ ul {
     font-weight: 400;
     color: white;
   }
-
+  .title-2,
+  .title-1 {
+    color: rgb(255, 235, 150);
+  }
   .title-1,
   .title-2,
   .title-3 {
