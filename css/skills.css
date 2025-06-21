@@ -100,11 +100,16 @@ body {
 }
 
 .main-header {
-  font-family: 'Great Vibes', cursive;
-  font-size: 20px;
-  margin-top: 180px;
-  color: rgba(8, 34, 5, 0.822);
+  margin-top: 200px;
   margin-left: 20px;
+}
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 35px !important;
+  color: white;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 10px;
 }
 .project-body {
   display: flex;
@@ -162,7 +167,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Tahoma, sans-serif;
-    font-size: 30px;
+    font-size: 18px !important;
     color: rgb(202, 197, 197);
     text-decoration: none;
     margin-bottom: 20px;
@@ -179,7 +184,7 @@ body {
 .project-name {
     display: flex;
     font-family: Tahoma, sans-serif;
-    font-size: 20px;
+    font-size: 18px !important;
     color: rgb(165, 146, 38);
     text-decoration: none;
     margin-top: 10px;
@@ -288,7 +293,7 @@ body {
 @media screen and (max-width: 400px) {
   .top-header {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* subtle dark shadow for contrast */
-    width: 90%;
+    width: 85%;
     flex-direction: column;
     align-items: center;
     gap: 5px;
@@ -459,4 +464,3 @@ body {
     text-align: left;
   }
 }
-
