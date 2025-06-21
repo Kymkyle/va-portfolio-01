@@ -297,6 +297,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    color: rgb(255, 235, 150);
     font-size: 12px;
     margin-left: 20px;
     padding: 8px 0;
@@ -376,6 +377,7 @@ body {
     margin-top: 8px;
     margin-bottom: 4px;
     text-align: center;
+    color: rgb(255, 235, 150);
   }
 }
 /* Phones Extra Small (≤ 360px) */
