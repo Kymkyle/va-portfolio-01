@@ -642,7 +642,9 @@ button:hover {
     color: rgb(255, 235, 150) !important;
     font-weight: 400;
   }
-
+  .contact-details-text1 {
+    fill: rgb(255, 235, 150) !important;
+  }
   .contact-me {
     font-size: 25px;
     padding: 8px;
