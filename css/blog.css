@@ -121,7 +121,7 @@ body {
   font-size: 60px;
   font-weight: bold;
   margin: 10px 0;
-  color: rgba(8, 34, 5, 0.822);
+  color: rgb(11, 184, 11);
   text-shadow:
     1px 1px 5px rgba(0, 0, 0, 0.6),
     -1px -1px 1px rgba(255, 255, 255, 0.1);
@@ -422,6 +422,7 @@ body {
 
   .main-header .title {
     font-size: 32px;
+    color: rgb(11, 184, 11);
   }
   .main-header .title-2 {
     text-align: justify;
